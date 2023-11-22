@@ -37,7 +37,7 @@ const SignUp = () => {
 
   };
 
-  const handlesignInhGoogle = async () => {
+  const handleSignInhGoogle = async () => {
     try {
       const res = await signInWithGoogle();
 
@@ -146,7 +146,7 @@ const SignUp = () => {
           </p>
           <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
         </div>
-        <div onClick={handlesignInhGoogle} className='flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer'>
+        <div onClick={handleSignInhGoogle} className='flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer'>
           <FcGoogle size={32} />
 
           <p>Continue with Google</p>

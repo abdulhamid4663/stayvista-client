@@ -5,8 +5,8 @@ import DatePicker from "./Calender";
 import { useState } from "react";
 
 const RoomReservation = ({ room }) => {
-    // const totalDays = parseInt(formatDistance(new Date(room?.to), new Date(room?.from)).split(' ')[0])
-    // console.log(totalDays);
+    const totalDays = parseInt(formatDistance(new Date(room?.to), new Date(room?.from)).split(' ')[0])
+    const totalPrice = room?.price * totalDays;
 
     const [value, setValue] = useState({
         startDate: new Date(room?.from),
@@ -22,7 +22,7 @@ const RoomReservation = ({ room }) => {
             </div>
             <hr />
             <div className="flex justify-center">
-                <DatePicker />
+                <DatePicker value={value} />
             </div>
             <hr />
             <div className="p-4">
@@ -31,7 +31,7 @@ const RoomReservation = ({ room }) => {
             <hr />
             <div className="p-4 flex items-center justify-between font-semibold text-lg">
                 <div className="">Total</div>
-                <div className=""></div>
+                <div className="">${totalPrice}</div>
             </div>
         </div>
     );
